@@ -3,8 +3,8 @@
 ; 安装程序初始定义常量
 !define PRODUCT_NAME "同步程序"
 !define PRODUCT_VERSION "1.2"
-!define PRODUCT_PUBLISHER "jetaimeyu"
-!define PRODUCT_WEB_SITE "jetaime.top"
+!define PRODUCT_PUBLISHER "迈迪信息技术有限公司"
+!define PRODUCT_WEB_SITE "http://www.maidiyun.com"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\AutoTask.exe"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
 !define PRODUCT_UNINST_ROOT_KEY "HKLM"
@@ -52,7 +52,7 @@ BrandingText "同步程序测试安装"
 Section "MainSection" SEC01
   SetOutPath "$INSTDIR"
   SetOverwrite ifnewer
-  File "release\*.*"
+  File /r  "code\*.*"
   CreateDirectory "$SMPROGRAMS\同步程序"
   CreateShortCut "$SMPROGRAMS\同步程序\同步程序.lnk" "$INSTDIR\AutoTask.exe"
   CreateShortCut "$DESKTOP\同步程序.lnk" "$INSTDIR\AutoTask.exe"
